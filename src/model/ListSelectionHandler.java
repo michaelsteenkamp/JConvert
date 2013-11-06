@@ -54,11 +54,23 @@ public class ListSelectionHandler implements ListSelectionListener{
 		}
 		//Integer -> Binary
 		else if(FrmConversion.lbSelection.getSelectedIndex() == 2){
-	
+			try{
+				int i = Integer.parseInt(input);
+				FrmConversion.txtOutput.setText("0b" + Integer.toBinaryString(i));
+			}
+			catch(Exception e){
+				FrmConversion.txtOutput.setText("Please enter a valid integer.");
+			}
 		}
 		//Integer -> Hexadecimal
 		else if(FrmConversion.lbSelection.getSelectedIndex() == 3){
-	
+			try{
+				int i = Integer.parseInt(input);
+				FrmConversion.txtOutput.setText("0b" + Integer.toHexString(i));
+			}
+			catch(Exception e){
+				FrmConversion.txtOutput.setText("Please enter a valid integer.");
+			}
 		}
 		//Hexadecimal -> Binary
 		else if(FrmConversion.lbSelection.getSelectedIndex() == 4){
