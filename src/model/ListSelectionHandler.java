@@ -74,11 +74,37 @@ public class ListSelectionHandler implements ListSelectionListener{
 		}
 		//Hexadecimal -> Binary
 		else if(FrmConversion.lbSelection.getSelectedIndex() == 4){
-	
+			if(input.substring(0, 2).equals("0x") == false){
+				FrmConversion.txtOutput.setText("Hexadecimal numbers must be prefixed with '0x'.");
+			}
+			else{
+				String h = input.substring(2, input.length());
+				try{
+					int i = Integer.parseInt(h, 16);
+					FrmConversion.txtOutput.setText(Integer.toBinaryString(i));
+				}
+				catch(Exception e){
+					FrmConversion.txtOutput.setText("Please enter a valid hexadecimal number.");
+				}
+				
+			}
 		}
 		//Hexadecimal -> Integer
 		else{
-			
+			if(input.substring(0, 2).equals("0x") == false){
+				FrmConversion.txtOutput.setText("Hexadecimal numbers must be prefixed with '0x'.");
+			}
+			else{
+				String h = input.substring(2, input.length());
+				try{
+					int i = Integer.parseInt(h, 16);
+					FrmConversion.txtOutput.setText(Integer.toString(i));
+				}
+				catch(Exception e){
+					FrmConversion.txtOutput.setText("Please enter a valid hexadecimal number.");
+				}
+				
+			}
 		}
 
 		
